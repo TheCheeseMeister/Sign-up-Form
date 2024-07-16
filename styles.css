@@ -154,6 +154,8 @@ input {
     letter-spacing: 1px;
     box-shadow: 0 0px 10px rgba(255, 0, 0, 0);
 
+    color:white;
+
     transition: 
         border 0.5s ease-out;
 }
@@ -202,11 +204,39 @@ input:focus + span.right-placeholder, input:not(:placeholder-shown) + span.right
     scale: 0.8;
 }
 
-input:focus, input:not(:placeholder-shown) {
+/*input:focus, input:not(:placeholder-shown) {
+    border: 2px solid rgb(85, 185, 152);
+    box-shadow: 0 0px 10px rgb(85, 185, 152);
+}*/
+
+input:invalid {
+    border: 2px solid rgb(216, 20, 20);
+    box-shadow: 0 0px 10px rgb(224, 18, 18);
+}
+
+input:invalid:focus + span.right-placeholder, input:invalid:focus + span.left-placeholder {
+    background-color: rgb(219, 1, 1);
+}
+
+input:invalid:placeholder-shown:focus + span.right-placeholder, input:invalid:placeholder-shown:focus + span.left-placeholder {
+    background-color: rgb(85, 185, 152);
+}
+
+input:invalid:not(:placeholder-shown) + span.right-placeholder, input:invalid:not(:placeholder-shown) + span.left-placeholder {
+    background-color: rgb(219, 1, 1);
+}
+
+input:valid {
     border: 2px solid rgb(85, 185, 152);
     box-shadow: 0 0px 10px rgb(85, 185, 152);
 }
 
+input:invalid:placeholder-shown {
+    border: 2px solid rgb(85, 185, 152);
+    box-shadow: 0 0px 10px rgb(85, 185, 152);
+}
+
+/*
 input:invalid, input:invalid:not(:placeholder-shown) + span {
     border: 2px solid rgb(219, 1, 1);
     box-shadow: 0 0px 10px rgb(219, 1, 1);
@@ -214,7 +244,7 @@ input:invalid, input:invalid:not(:placeholder-shown) + span {
 
 input:invalid + span.left-placeholder, input:invalid + span.right-placeholder {
     background-color: rgb(219, 1, 1);
-}
+}*/
 
 @keyframes transitionIn {
     from {
@@ -228,7 +258,8 @@ input:invalid + span.left-placeholder, input:invalid + span.right-placeholder {
     }
 }
 
-/*.sidebar {
+/*
+.sidebar {
     animation: transitionIn 1s ease-out;
 }
 
@@ -248,9 +279,16 @@ input:invalid + span.left-placeholder, input:invalid + span.right-placeholder {
 
     font-size: 16px;
 
-    background-color: #1a61be;
+    background-color: #144a91;
+    background: linear-gradient(to bottom, rgb(75, 75, 209), rgb(0, 46, 105));
     color: white;
     letter-spacing: 1px;
+
+    transition: all 0.5s ease-out;
+}
+
+.create:hover {
+    background: linear-gradient(to bottom, rgb(114, 114, 219), rgb(23, 84, 163));
 }
 
 .login {
@@ -259,6 +297,13 @@ input:invalid + span.left-placeholder, input:invalid + span.right-placeholder {
     font-size: 16px;
     color: white;
     letter-spacing: 1px;
+}
+
+.confirm-error {
+    position: absolute;
+    translate: 310px 27px;
+    color: red;
+    font-size: 14px;
 }
 
 @media only screen and (min-width: 1000px) {

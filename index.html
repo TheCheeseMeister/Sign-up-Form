@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign-up Form</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="javascript.js"></script>
+    <script src="javascript.js" defer></script>
 </head>
 <body>
     <div class="sidebar">
@@ -51,11 +51,12 @@
                 </div>
 
                 <div class="password">
-                    <input type="password" name="pwd" id="pwd" required placeholder="">
+                    <input type="password" name="pwd" id="pwd" minlength="8" required placeholder="">
                     <span class="left-placeholder">Password</span>
 
-                    <input type="password" name="confirm-pwd" id="confirm-pwd" required placeholder="">
+                    <input type="password" name="confirm-pwd" id="confirm-pwd" minlength="8" required placeholder="">
                     <span class="right-placeholder">Confirm Password</span>
+                    <p class="confirm-error" id="confirm-error">* Passwords don't match.</p>
                 </div>
             </fieldset>
 
