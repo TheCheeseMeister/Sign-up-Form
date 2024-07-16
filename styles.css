@@ -183,7 +183,8 @@ input {
 }
 
 input:focus + span.left-placeholder, input:not(:placeholder-shown) + span.left-placeholder {
-    background-color: red;
+    background-color: rgb(85, 185, 152);
+    padding: 2px;
     translate: 5px -10px;
 
     color: rgb(255, 255, 255);
@@ -192,7 +193,8 @@ input:focus + span.left-placeholder, input:not(:placeholder-shown) + span.left-p
 }
 
 input:focus + span.right-placeholder, input:not(:placeholder-shown) + span.right-placeholder {
-    background-color: red;
+    background-color: rgb(85, 185, 152);
+    padding: 2px;
     translate: 315px -10px;
 
     color: rgb(255, 255, 255);
@@ -201,32 +203,63 @@ input:focus + span.right-placeholder, input:not(:placeholder-shown) + span.right
 }
 
 input:focus, input:not(:placeholder-shown) {
-    border: 2px solid red;
-    box-shadow: 0 0px 10px red;
+    border: 2px solid rgb(85, 185, 152);
+    box-shadow: 0 0px 10px rgb(85, 185, 152);
 }
 
-/*input.fname:focus ~ span.fnplaceholder, input.fname:not(:placeholder-shown) ~ span.fnplaceholder {
-    outline-width: 5px;
-    color: rgb(255, 255, 255);
-    background-color: red;
-    border: 2px solid rgb(255, 0, 0);
-
-
-    translate: 0px -10px;
-
-    scale: 0.8;
+input:invalid, input:invalid:not(:placeholder-shown) + span {
+    border: 2px solid rgb(219, 1, 1);
+    box-shadow: 0 0px 10px rgb(219, 1, 1);
 }
 
-input.lname:focus ~ span.lnplaceholder, input.lname:not(:placeholder-shown) ~ span.lnplaceholder {
-    outline-width: 5px;
-    color: rgb(255, 255, 255);
-    background-color: red;
+input:invalid + span.left-placeholder, input:invalid + span.right-placeholder {
+    background-color: rgb(219, 1, 1);
+}
 
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
 
-    translate: 310px -10px;
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
 
-    scale: 0.8;
+/*.sidebar {
+    animation: transitionIn 1s ease-out;
+}
+
+.index {
+    opacity: 0;
+    animation: transitionIn 1s ease-out 1s forwards;
 }*/
+
+.create {
+    border: none;
+    height: 50px;
+    width: 200px;
+
+    margin-left: 40px;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    background-color: #1a61be;
+    color: white;
+    letter-spacing: 1px;
+}
+
+.login {
+    margin-left: 40px;
+    margin-bottom: 60px;
+    font-size: 16px;
+    color: white;
+    letter-spacing: 1px;
+}
 
 @media only screen and (min-width: 1000px) {
     body {
