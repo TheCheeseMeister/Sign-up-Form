@@ -145,32 +145,88 @@ input {
     display: inline-block;
     height: 30px;
     width: 225px;
-    border: none;
+    border: 2px solid rgb(216, 216, 216);
     border-radius: 3px;
+    outline: none;
+    background-color: transparent;
 
     font-size: 16px;
     letter-spacing: 1px;
-    outline: 2px solid rgb(214, 214, 214);
+    box-shadow: 0 0px 10px rgba(255, 0, 0, 0);
 
     transition: 
-        outline 0.5s ease-out;
+        border 0.5s ease-out;
 }
 
-input:focus {
-    outline-width: 5px;
-}
-
-input:not(:placeholder-shown) {
-    outline-width: 10px;
-}
-
-.placeholder {
+.left-placeholder {
     position: absolute;
     font-size: 16px;
     letter-spacing: 0px;
+    background-color: transparent;
+    color:rgb(27, 27, 27);
 
+    translate: 5px 7px;
 
+    transition: all 0.5s ease-out;
 }
+
+.right-placeholder {
+    position: absolute;
+    font-size: 16px;
+    letter-spacing: 0px;
+    background-color: transparent;
+    color:rgb(27, 27, 27);
+
+    translate: 315px 7px;
+
+    transition: all 0.5s ease-out;
+}
+
+input:focus + span.left-placeholder, input:not(:placeholder-shown) + span.left-placeholder {
+    background-color: red;
+    translate: 5px -10px;
+
+    color: rgb(255, 255, 255);
+
+    scale: 0.8;
+}
+
+input:focus + span.right-placeholder, input:not(:placeholder-shown) + span.right-placeholder {
+    background-color: red;
+    translate: 315px -10px;
+
+    color: rgb(255, 255, 255);
+
+    scale: 0.8;
+}
+
+input:focus, input:not(:placeholder-shown) {
+    border: 2px solid red;
+    box-shadow: 0 0px 10px red;
+}
+
+/*input.fname:focus ~ span.fnplaceholder, input.fname:not(:placeholder-shown) ~ span.fnplaceholder {
+    outline-width: 5px;
+    color: rgb(255, 255, 255);
+    background-color: red;
+    border: 2px solid rgb(255, 0, 0);
+
+
+    translate: 0px -10px;
+
+    scale: 0.8;
+}
+
+input.lname:focus ~ span.lnplaceholder, input.lname:not(:placeholder-shown) ~ span.lnplaceholder {
+    outline-width: 5px;
+    color: rgb(255, 255, 255);
+    background-color: red;
+
+
+    translate: 310px -10px;
+
+    scale: 0.8;
+}*/
 
 @media only screen and (min-width: 1000px) {
     body {
