@@ -1,3 +1,93 @@
-p {
-    color: red;
+@font-face {
+    font-family: 'lilita_oneregular';
+    src: url('fonts/lilitaone-regular-webfont.woff2') format('woff2'),
+         url('fonts/lilitaone-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'kanitregular';
+    src: url('fonts/kanit-regular-webfont.woff2') format('woff2'),
+         url('fonts/kanit-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.title {
+    outline: 2px solid red;
+}
+
+html, body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 37%;
+
+    background-color: blue;
+    background-image: url(images/ocean.jpg);
+    background-position: center;
+}
+
+.logo {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+
+    margin-top: 150px;
+    padding: 32px 0;
+
+    gap: 16px;
+
+    background-color: rgba(2, 62, 70, 0.349);
+    font-family: 'lilita_oneregular';
+    font-size: 20px;
+    color: rgb(238, 238, 219);
+    letter-spacing: 2px;
+}
+
+.logo-pic {
+    height: 15vh;
+}
+
+.footer {
+    align-self: center;
+    width: 100%;
+    text-align: center;
+
+    margin-bottom: 24px;
+
+    color: white;
+}
+
+main {
+    width: 65%;
+
+    background-color: red;
+}
+
+@media only screen and (min-width: 1000px) {
+    body {
+        margin: 0 300px;
+        background-color: rgb(50, 54, 70);
+    }
+
+    .logo {
+        font-size: 30px;
+    }
 }

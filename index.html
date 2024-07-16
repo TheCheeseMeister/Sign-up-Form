@@ -8,6 +8,42 @@
     <script src="javascript.js"></script>
 </head>
 <body>
-    <p>Hey</p>
+    <div class="sidebar">
+        <div class="logo">
+            <img class="logo-pic" src="images/odin-lined.png" alt="Company Logo">
+            
+            <h1 class="logo-text">Waterlife</h1>
+        </div>
+
+        <div class="footer">
+            <p>Photo by <a href="https://unsplash.com/@yucar">
+                yucar studios</a> on <a href="https://unsplash.com">
+                    Unsplash</a></p>
+        </div>
+    </div>
+
+    <main class="index">
+        <h2 class="subtext">Connect with water lovers all over the world and share your 
+            water wonders. Sign up today and dive in.
+            <br><br>Tempting, isn't it?</h2>
+
+        <form action="/account-creation.html" method="post">
+            <fieldset class="form">
+                <legend class="form-text">Let's do this!</legend>
+
+                <div class="name">
+                    <label for="fname">First Name</label>
+                    <input type="text" name="fname" id="fname">
+
+                    <label for="lname">Last Name</label>
+                    <input type="text" name="lname" id="lname">
+                </div>
+            </fieldset>
+
+            <button type="submit" class="create">Create Account</button>
+        </form>
+
+        <p class="login">Already have an account? <a href="">Log in</a></p>
+    </main>
 </body>
 </html>
