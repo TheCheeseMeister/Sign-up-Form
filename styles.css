@@ -16,14 +16,16 @@
 
 }
 
-.title {
-    outline: 2px solid red;
-}
-
-html, body {
+:root {
     box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+.title {
+    outline: 2px solid red;
 }
 
 body {
@@ -76,15 +78,109 @@ body {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
     width: 65%;
+    padding: 50px;
 
-    background-color: red;
+    /*background-color: rgb(113, 144, 184);*/
+    background: linear-gradient(to bottom, rgb(169, 179, 182), rgb(40, 107, 151));
+    font-family: 'kanitregular';
+}
+
+.subtext {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-left: 40px;
+
+    transform: translateY(-10%);
+
+    letter-spacing: 1px;
+}
+
+.subtext-1 {
+    color: white;
+}
+
+.subtext-2 {
+    color: #1c3b46;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 40px;
+
+    height: 300px;
+    padding: 40px;
+    margin-bottom: 50px;
+    transform: translateY(-5%);
+
+    background-color: #1a61be;
+    box-shadow: 0 0px 20px rgb(63, 77, 156);
+
+    border-color: #1a61be00;
+    border-radius: 15px;
+
+    letter-spacing: 1px;
+}
+
+.form legend {
+    float: left;
+    margin-bottom: 16px;
+
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+}
+
+.name, .info, .password {
+    display: flex;
+    gap: 75px;
+}
+
+input {
+    display: inline-block;
+    height: 30px;
+    width: 225px;
+    border: 3px solid rgb(226, 226, 226);
+    border-radius: 3px;
+
+    font-size: 16px;
+    letter-spacing: 1px;
+    outline: none;
+
+    transition: 
+        border 0.5s ease-out;
+}
+
+input:focus {
+    border: 3px solid rgb(13, 228, 181);
+}
+
+input:not(:placeholder-shown) {
+    border: 3px solid rgb(13, 228, 181);
+}
+
+.placeholder {
+    position: absolute;
+    font-size: 16px;
+    letter-spacing: 0px;
+    
+    transition: all .4s;
+    transition-property: all;
+    transition-duration: 0.4s;
+    transition-timing-function: ease;
+    transition-delay: 0s;
 }
 
 @media only screen and (min-width: 1000px) {
     body {
         margin: 0 300px;
         background-color: rgb(50, 54, 70);
+        box-shadow: 0 0 100px rgb(91, 128, 139);
     }
 
     .logo {
