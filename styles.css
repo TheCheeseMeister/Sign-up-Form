@@ -145,35 +145,31 @@ input {
     display: inline-block;
     height: 30px;
     width: 225px;
-    border: 3px solid rgb(226, 226, 226);
+    border: none;
     border-radius: 3px;
 
     font-size: 16px;
     letter-spacing: 1px;
-    outline: none;
+    outline: 2px solid rgb(214, 214, 214);
 
     transition: 
-        border 0.5s ease-out;
+        outline 0.5s ease-out;
 }
 
 input:focus {
-    border: 3px solid rgb(13, 228, 181);
+    outline-width: 5px;
 }
 
 input:not(:placeholder-shown) {
-    border: 3px solid rgb(13, 228, 181);
+    outline-width: 10px;
 }
 
 .placeholder {
     position: absolute;
     font-size: 16px;
     letter-spacing: 0px;
-    
-    transition: all .4s;
-    transition-property: all;
-    transition-duration: 0.4s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
+
+
 }
 
 @media only screen and (min-width: 1000px) {
